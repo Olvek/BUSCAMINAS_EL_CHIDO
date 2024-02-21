@@ -1,0 +1,100 @@
+html {
+    height: 100%;
+    background: linear-gradient( purple, blue);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    max-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+}
+
+
+h1 {
+    font-family: 'Pacifico', cursive;
+    color: #FFFFFF;
+    text-align: center;
+    margin-top: 1.5em;
+    font-size: 80px;
+    text-shadow: #73257c 0.1em 0.1em 0.2em;
+}
+main {
+    height: 100%;
+}
+
+.botonInicio {
+    margin: 15% auto;  
+}
+
+
+a {
+    text-decoration: none;
+}
+
+.boton {
+    display: block;
+    margin: auto;
+    margin-bottom: 1em;
+    padding: 1em;
+    width: 20%;
+    min-width: 200px;
+    border-color: #7dbdf1;
+    border-radius: 5%;
+    background: #7dbdf1;
+    color: antiquewhite;
+    font-family: 'Fredoka One', cursive;
+    font-size: 150%;
+    transition: 0.3s;
+    z-index: 0;
+}
+
+.Usuarios{
+
+    margin:auto; 
+    justify-content: center;
+    align-items: center; 
+    padding: 1em; 
+    width: 20%; 
+    min-width: 200px;
+    font-size: 150%;
+    z-index: 0;  
+    border-radius: 5%;
+}
+
+.Usuario{
+    height: 55px; 
+    width: 300px; 
+    margin-top: 10px; 
+    align-items: center; 
+    text-align: center; 
+    margin:center;
+    border-radius: 5%;
+}
+
+.boton:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.colorMorado {
+    background: #7dbdf1;
+}
+
+
+@media only screen and (max-width: 768px) {
+    h1 {
+        font-size: 40px;
+        line-height: 1.5em;
+    }
+    .boton {
+        margin: 30% auto;
+    }
+    .Usuarios{
+        margin: 30% auto;
+    }
+
+    
+}
