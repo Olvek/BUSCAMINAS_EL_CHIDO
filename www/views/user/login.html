@@ -1,30 +1,33 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <link rel="stylesheet" href="/BUSCAMINAS_EL_CHIDO/www/public/css/reset.css">
-        <link rel="stylesheet" href="/BUSCAMINAS_EL_CHIDO/www/public/css/style-login.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Montserrat+Alternates:wght@500&family=Pacifico&display=swap" rel="stylesheet">
-        <title>home</title> 
-    </head>
-    <body>
-        <header>
-            <h1>Buscaminas</h1>
-        </header>
-        <main>
-            <section id="inicio" class="botonInicio">
-                <div class="Usuarios" >
-                    <input type="text" placeholder="Usuario"style="height: 55px; width: 300px; margin-top: 10px; text-align: center; margin:center;">
-                </div>
-                <a href="/BUSCAMINAS_EL_CHIDO/www/views/home/game.html">
-                    <label for="botonIniciar">
-                        <button  id="botonIniciar" class="boton colorMorado">Iniciar Juego</button>
-                    </label>
-                </a>  
-            </section>
-        </main>
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/BUSCAMINAS_EL_CHIDO/www/public/css/Style-withlogin.css">
+</head>
+<body>
+    <div class="title">
+        <h1>Buscaminas</h1>
+    </div>
+    <div class="formulario">
+        <from method="post">
+            <h2>Registra tu nombre</h2>
+            <div class="username">
+                <input type="text" required>
+                <label>Nombre de usuario</label>
+            </div>
+        </from>
+    </div>
+        <!-- <from method="post">
+            <div>
+                <button id="botonIniciar">Iniciar Juego</button>
+            </div>
+        </from> -->
+    <a href="/BUSCAMINAS_EL_CHIDO/www/views/home/game.html">
+        <label for="botonIniciar">
+            <button  id="botonIniciar" class="boton colorAmarillo">Iniciar Juego</button>
+        </label>
+    </a>
+</body>
 </html>
