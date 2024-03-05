@@ -25,11 +25,23 @@
         <div class="prepend-input" style="display: none">💣</div>
         <input id="bombs" class="input" style="display: none" type="number" value="10" min="1" max="2500" aria-label="Number of bombs">
         <select id="emojiset" class="input input-select" aria-label="Change emoji set">
-          <option value="🐣 💣 🚧 ◻️">🐣 💣 🚧</option>
-          <option value="💖 😍 😊 ◻️">💖 😍 😊</option>
-          <option value="🌷 ⚡️ 🐞 ◻️">🌷 ⚡️ 🐞</option>
-          <option value="⭕️ ❌ ❗️ ✖️️">⭕️ ❌ ❗️ ✖️</option>
-          <option value="☀ ⚡ ☔ ☁️">☀ ⚡ ☔ ☁️</option>
+          <option value="🐧 ❄️ 🚧 ◻️">🐧 ❄️ 🚧</option>
+          <option value="🎧 🎶 🚧 ◻️">🎧 🎶 🚧</option>
+          <option value="🐶 🐱 🚧 ◻️">🐶 🐱 🚧</option>
+          <option value="🎃 👻 🚧 ◻️">🎃 👻 🚧</option>
+          <option value="☀️ 🌑 🚧 ◻️">☀️ 🌑 🚧</option>
+          <option value="👽 👾 🚧 ◻️">👽 👾 🚧</option>
+          <option value="🎄 🎅 🚧 ◻️">🎄 🎅 🚧</option>
+          <option value="💌 😍 🚧 ◻️">💌 😍 🚧</option>
+          <option value="🐾 🐼 🚧 ◻️">🐾 🐼 🚧</option>
+          <option value="😇 😈 🚧 ◻️">😇 😈 🚧</option>
+          <option value="🐭 🐱 🚧 ◻️">🐭 🐱 🚧</option>
+          <option value="❄️ 🔥 🚧 ◻️">❄️ 🔥 🚧</option>
+          <option value="🐢 🐰 🚧 ◻️">🐢 🐰 🚧</option>
+          <option value="🎪 🎈 🚧 ◻️">🎪 🎈 🚧</option>
+          <option value="🌈 ⚡ 🚧 ◻️">🌈 ⚡ 🚧</option>
+          <option value="🍕 🍟 🚧 ◻️">🍕 🍟 🚧</option>
+          <option value="🎎 🍙 🚧 ◻️">🎎 🍙 🚧</option>
         </select>
         <button class="js-popup-new-game btn" type="button">Save and restart game</button>
       </div>
@@ -90,5 +102,42 @@
       ga('send', 'pageview')
     </script>
     <link href="http://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet" type="text/css">
+
   </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTTP Request Example</title>
+</head>
+<body>
+
+<script>
+    // Realizar una solicitud HTTP
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://www.colr.org/json/color/ffba13", true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                // Procesar la respuesta
+                var response = JSON.parse(xhr.responseText);
+                console.log("Información del color:", response);
+            } else {
+                console.log("Error al realizar la solicitud:", xhr.status);
+            }
+        }
+    };
+    xhr.send();
+</script>
+
+</body>
+</html>
+
+<button class="js-popup-new-game btn" type="button">Save and restart game</button>
+<div class="wrapper">Contenido de la envoltura</div>
+
+
+

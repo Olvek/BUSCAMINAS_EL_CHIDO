@@ -304,3 +304,19 @@ Game.prototype.showMessage = function () {
 console.log('Use: `new Game(cols, rows, bombs, [emptyemoji, bombemoji, flagemoji, starteremoji], twemojiOrNot)` to start a new game with customizations.')
 console.log(' Eg: `game = new Game(10, 10, 10, ["🌱", "💥", "🚩", "◻️"], false)`')
 console.log(' Or: `game = new Game(16, 16, 30, ["🐣", "💣", "🚧", "◻️"], true)`')
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  var wrapper = document.querySelector('.wrapper');
+  var newGameButton = document.querySelector('.js-popup-new-game');
+
+  newGameButton.addEventListener('click', function() {
+      var randomColor = 'rgb(' + Math.floor(Math.random() * 256) + ',' +
+      Math.floor(Math.random() * 256) + ',' +
+      Math.floor(Math.random() * 256) + ')';
+      wrapper.style.background = randomColor;
+  });
+});
+
+
+
