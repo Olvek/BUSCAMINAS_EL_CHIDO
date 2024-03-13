@@ -1,19 +1,72 @@
-html {
-    height: 100%;
-    background: linear-gradient( purple, blue);
+/* body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient( #FFE400, #EEB10D, #C96801, #8F3201, #481900 );
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100%;
-    max-height: 100vh;
-    font-family: 'Poppins', sans-serif;
-    display: flex;
+.container {
+    background-color: #0100007d;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    left: 39%;
 }
 
+.title {
+    width: 50%;
+    height: 80%;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url("/BUSCAMINAS_EL_CHIDO/www/public/img/Imagensi.png");
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
 
-h1 {
+.formulario {
+    margin-bottom: 20px;
+}
+
+.formulario h2{
+    color: #FFFFFF;
+}
+
+.username input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.botonIniciar {
+    background-color: #ffc107;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.botonIniciar:hover {
+    background-color: #ff7700;
+}
+
+h1{
     font-family: 'Pacifico', cursive;
     color: #FFFFFF;
     text-align: center;
@@ -21,80 +74,111 @@ h1 {
     font-size: 80px;
     text-shadow: #73257c 0.1em 0.1em 0.2em;
 }
-main {
-    height: 100%;
-}
-
-.botonInicio {
-    margin: 15% auto;  
-}
 
 
-a {
-    text-decoration: none;
-}
+////////// */
 
-.boton {
-    display: block;
-    margin: auto;
-    margin-bottom: 1em;
-    padding: 1em;
-    width: 20%;
-    min-width: 200px;
-    border-color: #7dbdf1;
-    border-radius: 5%;
-    background: #7dbdf1;
-    color: antiquewhite;
-    font-family: 'Fredoka One', cursive;
-    font-size: 150%;
-    transition: 0.3s;
-    z-index: 0;
-}
-
-.Usuarios{
-
-    margin:auto; 
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(#FFE400, #EEB10D, #C96801, #8F3201, #481900);
+    margin: 0;
+    padding: 0;
+    display: flex;
     justify-content: center;
-    align-items: center; 
-    padding: 1em; 
-    width: 20%; 
-    min-width: 200px;
-    font-size: 150%;
-    z-index: 0;  
-    border-radius: 5%;
+    align-items: center;
+    height: 100vh;
 }
 
-.Usuario{
-    height: 55px; 
-    width: 300px; 
-    margin-top: 10px; 
-    align-items: center; 
-    text-align: center; 
-    margin:center;
-    border-radius: 5%;
+.container {
+    background-color: #0100007d;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    max-width: 300px;
+    width: 90%; /* Adjusted width for responsiveness */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 100px;
 }
 
-.boton:hover {
-    transform: scale(1.1);
+.title {
+    width: 50%;
+    height: 80%;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url("/BUSCAMINAS_EL_CHIDO/www/public/img/Imagensi.png");
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.formulario {
+    margin-bottom: 20px;
+}
+
+.formulario h2 {
+    color: #ffffff;
+}
+
+.username input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.botonIniciar {
+    background-color: #ffc107;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
     cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
 }
 
-.colorMorado {
-    background: #7dbdf1;
+.botonIniciar:hover {
+    background-color: #ff7700;
 }
 
+h1 {
+    font-family: 'Pacifico', cursive;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 1.5em;
+    font-size: 6vw; /* Adjusted font size for responsiveness */
+    text-shadow: #73257c 0.1em 0.1em 0.2em;
+}
 
-@media only screen and (max-width: 768px) {
+/* Media Query for smaller devices */
+@media screen and (max-width: 600px) {
+    .container {
+        width: 80%;
+    }
+
     h1 {
-        font-size: 40px;
-        line-height: 1.5em;
-    }
-    .boton {
-        margin: 30% auto;
-    }
-    .Usuarios{
-        margin: 30% auto;
+        font-size: 10vw;
     }
 
-    
+    .title {
+        width: 80%;
+        height: 30%;
+        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url("/BUSCAMINAS_EL_CHIDO/www/public/img/Imagensi.png");
+        overflow: hidden;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: auto;
+        padding: 20px;
+        text-align: center;
+        margin-top: 50px;
+    }
 }

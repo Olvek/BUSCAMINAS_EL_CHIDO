@@ -106,55 +106,70 @@ h1{
 
 @media only screen and (max-width: 768px) {
     h1 {
-        font-size: 40px;
-        line-height: 1.5em;
-    }
-    .boton {
-        margin: 30% auto;
-    }
-    .Usuarios{
-        margin: 30% auto;
+        font-size: 30px;
     }
 
+    .title {
+        width: 50%;
+        height: 80%;
+        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url("/BUSCAMINAS_EL_CHIDO/www/public/img/Imagensi.png");
+        overflow: hidden;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: auto;
+        padding: 20px;
+        text-align: center;
+    }
+    .boton {
+        display: block;
+        margin: auto;
+        margin-bottom: 1em;
+        padding: 1em;
+        margin-top: -100px;
+        width: 20%;
+        min-width: 200px;
+        border-color: #ffaf24;
+        border-radius: 5%;
+        background: #de7c0e;
+        color: antiquewhite;
+        font-family: 'Fredoka One', cursive;
+        font-size: 150%;
+        transition: 0.3s;
+        z-index: 0;
+    }
     
-}
-
-@media only screen and (max-width: 768px) {
-    h1 {
-        font-size: 40px;
-        line-height: 1.5em;
-    }
-    .boton {
-        margin: 30% auto;
-    }
-    .Usuarios{
-        margin: 30% auto;
-    }
-
-    .cell {
-        /* disable hold to save image in iOS */
-        -webkit-touch-callout: none;
-        width: 25px;
-        height: 25px;
-        font-size: 20px;
-        background-color: transparent;
-        border: 0;
-        display: inline-block;
-        position: relative;
-        padding: 2px 3px;
-        vertical-align: middle;
-        cursor: pointer;
-    }
-
-    .wrapper {
-        padding: 10px;
-        position: relative;
-        -webkit-user-select: none;
-        user-select: none;
+    .username label {
+        text-align: center;
+       position: absolute;
+        top: 40%;
+        left: 5px;
+        color: #ffffff;
+        transform: translateY(-20%); 
+        transform: translateX(70%);
+        font-size: 16px;
+        pointer-events: none;
+    } 
+    
+    .formulario{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 300px;
+        background: #050505a5;
         border-radius: 10px;
-        margin-top: 10px;
-        border: 5px solid #f4f4f4;
-        display: inline-block;
-        min-width: 250px;
+
+    }
+    
+    .formulario form{
+        padding: 0 40px;
+        box-sizing: border-box;
+
+    }
+
+    form .username{
+        position: relative;
+        border-bottom: 2px solid #fbfbfb;
+        margin: 50px 0;
     }
 }

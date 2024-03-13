@@ -1,0 +1,13 @@
+.wrapper {
+    font-family: AppleColorEmoji;
+    font-size: 15px;
+    text-align: center;
+    padding: 20px 0;
+    background: linear-gradient(#FFE400, #EEB10D, #C96801, #8F3201, #481900);
+
+    // Generar un color aleatorio en formato hexadecimal
+    $randomColor: '#' + random(0, 16777215);
+
+    // Aplicar el color aleatorio como un gradiente lineal en el fondo
+    background: linear-gradient($randomColor, darken($randomColor, 10%));
+}

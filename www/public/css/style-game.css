@@ -4,8 +4,17 @@ body {
     font-size: 15px;
     text-align: center;
     padding: 20px 0;
-    background: linear-gradient( #FFE400, #EEB10D, #C96801, #8F3201, #481900 );
+    background: linear-gradient( #92cbec, #5b58ee, #2428e6, #843ae6, #8001a0 );
 }
+
+.wrapper {
+    font-family: AppleColorEmoji;
+    font-size: 15px;
+    text-align: center;
+    padding: 20px 0;
+}
+
+
 
 span, input, a, div, button {
     box-sizing: border-box;
@@ -16,13 +25,13 @@ span, input, a, div, button {
     font-size: 0.65em;
     border-radius: 3px;
     font-family: 'Exo 2', sans-serif;
-    color: #666;
+    color: #000000;
     font-weight: bold;
     display: inline-block;
 }
 
 .btn {
-    background: #f7f7f7;
+    background: #73f573;
     text-decoration: none;
     text-transform: uppercase;
     border: 0;
@@ -49,14 +58,14 @@ span, input, a, div, button {
     width: 100%;
     display: block;
     font-size: 1.2em;
-    padding: 10px;
-    border: 1px solid #eee;
+    padding: 15px;
+    border: 3px solid #ffffff;
     text-decoration: none;
     border-radius: 5px;
 }
 
 .action-btn:hover {
-    background-color: #f4f4f4;
+    background-color: #007a74;
 }
 
 .action-btn .emoji {
@@ -300,3 +309,4 @@ code {
         min-width: 250px;
     }
 }
+
