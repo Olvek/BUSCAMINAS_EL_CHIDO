@@ -1,11 +1,11 @@
-var APP_PREFIX = 'EmojiMinesweeper'
+var APP_PREFIX = 'BUSCAMINAS_EL_CHIDO'
 var VERSION = 'v0.0.2'
 var CACHE_NAME = APP_PREFIX + VERSION
 var URLS = [
-  '/emoji-minesweeper/',
-  '/emoji-minesweeper/index.html',
-  '/emoji-minesweeper/game.js',
-  '/emoji-minesweeper/twemoji.js'
+  '/BUSCAMINAS_EL_CHIDO/',
+  '/BUSCAMINAS_EL_CHIDO/www/views/home/game.html',
+  '/BUSCAMINAS_EL_CHIDO/www/public/js/game.js',
+  '/BUSCAMINAS_EL_CHIDO/www/public/js/twemoji.js'
 
 ]
 

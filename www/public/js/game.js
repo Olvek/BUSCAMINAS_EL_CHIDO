@@ -235,7 +235,7 @@ Game.prototype.prepareEmoji = function () {
         ele = document.createElement('img')
         ele.className = 'emoji'
         ele.setAttribute('aria-hidden', 'true')
-        ele.src = twemoji.parse(emoji).match(/src=\"(.+)\">/)[1]
+        ele.src = twemoji.parse(emoji).match(/src='(.+?)'|src=\"(.+?)\">/)?.[1] || "";
       }
     } else {
       ele = document.createTextNode(emoji.alt || emoji.data || emoji)
@@ -293,10 +293,17 @@ Game.prototype.showMessage = function () {
   var seconds = ((new Date() - this.startTime) / 1000).toFixed(2)
   var winner = this.result === 'won'
   var emoji = winner ? '🤑' : '😵'
+  var vibrar = winner ? 'vibrar' : 'novibrate'
   this.updateFeedback(winner ? "Yay, you won!" : "Boom! you lost.")
   document.querySelector('.wrapper').classList.add(this.result)
   document.getElementById('timer').textContent = seconds
   document.getElementById('result').innerHTML = this.usetwemoji ? twemoji.parse(emoji) : emoji
+  document.addEventListener('vibrar', function(){
+    setTimeout(() => {
+        navigator.vibrarte([1000])
+    }, );
+
+})
 }
 
 // console documentation

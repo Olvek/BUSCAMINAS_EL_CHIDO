@@ -55,3 +55,31 @@
         font-size: small;
     }
 }
+
+
+.records{
+
+    position: fixed;
+    top: 0;
+    color: white;
+    font-size: x-large;
+    font-weight: bold;
+    *{
+        margin: 0;
+        letter-spacing: 1px;
+        font-weight: lighter;
+    }
+    & .text1{
+        padding: 1rem;
+        background-color: rgb(0 0 0 / 50%);
+        display: flex;
+        margin: .5rem;
+        line-height: 1rem;
+        height: auto;
+        width: max-content;
+    }
+
+    & .text1 >  h5{
+        font-size: small;
+    }
+}
