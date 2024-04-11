@@ -1,20 +1,69 @@
-
 body {
     font-family: AppleColorEmoji;
     font-size: 15px;
     text-align: center;
     padding: 20px 0;
     background: linear-gradient( #92cbec, #5b58ee, #2428e6, #843ae6, #8001a0 );
+
 }
 
-.wrapper {
-    font-family: AppleColorEmoji;
-    font-size: 15px;
-    text-align: center;
-    padding: 20px 0;
+.info{
+
+    position: fixed;
+    top: 0;
+    color: white;
+    font-size: x-large;
+    font-weight: bold;
+    *{
+        margin: 0;
+        letter-spacing: 1px;
+        font-weight: lighter;
+    }
+    & .text{
+        padding: 1rem;
+        background-color: rgb(0 0 0 / 50%);
+        display: flex;
+        margin: .5rem;
+        line-height: 1rem;
+        height: auto;
+        width: max-content;
+    }
+
+    & .text >  h5{
+        font-size: small;
+    }
 }
 
+.info, iframe{
+    border: none;
+    float: left;
+}
+.score{
 
+    position: fixed;
+    top: 0;
+    color: white;
+    font-size: x-large;
+    font-weight: bold;
+    *{
+        margin: 0;
+        letter-spacing: 1px;
+        font-weight: lighter;
+    }
+    & .text{
+        padding: 1rem;
+        background-color: rgb(0 0 0 / 50%);
+        display: flex;
+        margin: .5rem;
+        line-height: 1rem;
+        height: auto;
+        width: max-content;
+    }
+
+    & .text >  h5{
+        font-size: small;
+    }
+}
 
 span, input, a, div, button {
     box-sizing: border-box;
@@ -69,8 +118,8 @@ span, input, a, div, button {
 }
 
 .action-btn .emoji {
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
 }
 
 input[type=radio] {
@@ -164,6 +213,8 @@ code {
     display: inline-block;
     min-width: 500px;
     background-color: #ffffff;
+    margin-right: 400px;
+    
 }
 
 .won .default-emoji,
@@ -270,7 +321,10 @@ code {
     top: -1px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 894px) {
+    body{
+        height: 615px;
+    }
     h1 {
         font-size: 40px;
         line-height: 1.5em;
@@ -307,6 +361,15 @@ code {
         border: 5px solid #f4f4f4;
         display: inline-block;
         min-width: 250px;
+        margin: auto;
+        margin-top: 20px;
     }
 }
+
+@media only screen and (max-height: 932px) {
+    body{
+        height: 932px;
+    }
+}
+
 

@@ -23,8 +23,10 @@
     ]
   },
   "dependencies": {
+    "boostrap": "^2.0.0",
     "bootstrap": "^5.3.3",
     "jquery": "^3.7.1",
-    "leaflet": "^1.9.4"
+    "leaflet": "^1.9.4",
+    "twemoji": "^14.0.2"
   }
 }

@@ -7,13 +7,29 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="apple-touch-icon" href="/BUSCAMINAS_EL_CHIDO/www/public/img/icon-192.png" />
     <link rel="stylesheet" href="/BUSCAMINAS_EL_CHIDO/www/public/css/style-game.css">
+    <script src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@twemoji/api@15.0.2/dist/twemoji.min.js" integrity="sha384-D6GSzpW7fMH86ilu73eB95ipkfeXcMPoOGVst/L04yqSSe+RTUY0jXcuEIZk0wrT" crossorigin="anonymous"></script>
 
   </head>
   <body>
+    <div class="vistas">
+      <main> 
+        <div calss="info">
+          <iframe src="/BUSCAMINAS_EL_CHIDO/www/views/modules/cambios.html" width="250px" height="60px"></iframe>
+        </div>
+        
+      </main>
+      <main> 
+        <div calss="score">
+          <iframe src="/BUSCAMINAS_EL_CHIDO/www/views/modules/score.html" width="250px" height="60px"></iframe>
+        </div>
+      </main>
+    </div>
+
     <div class="wrapper">
       <button type="button" class="settings js-settings" aria-haspopup="true" aria-expanded="false" aria-label="Settings"></button>
       <div class="js-settings-popup settings-popup">
-        <div class="flex" style="display: none">
+        <div class="flex" >
           <label class="btn flex-cell" aria-label="Use Twitter Emoji"><input type="radio" name="emoji" id="twemoji" checked> Twemoji</label>
           <label class="btn flex-cell" aria-label="Use Native Emoji"><input type="radio" name="emoji" id="emoji"> Native emoji</label>
         </div>
@@ -25,6 +41,7 @@
         <div class="prepend-input" style="display: none">💣</div>
         <input id="bombs" class="input" style="display: none" type="number" value="10" min="1" max="2500" aria-label="Number of bombs">
         <select id="emojiset" class="input input-select" aria-label="Change emoji set">
+          <option value="✅ 💣 🚧 ◻️">✅ 💣 🚧</option>
           <option value="🐧 ❄️ 🚧 ◻️">🐧 ❄️ 🚧</option>
           <option value="🎧 🎶 🚧 ◻️">🎧 🎶 🚧</option>
           <option value="🐶 🐱 🚧 ◻️">🐶 🐱 🚧</option>
@@ -42,7 +59,6 @@
           <option value="🌈 ⚡ 🚧 ◻️">🌈 ⚡ 🚧</option>
           <option value="🍕 🍟 🚧 ◻️">🍕 🍟 🚧</option>
           <option value="🎎 🍙 🚧 ◻️">🎎 🍙 🚧</option>
->>>>>>> efa6443fa163016355a856b109688b5fd06f1ba9
         </select>
         <button class="js-popup-new-game btn" type="button">Save and restart game</button>
       </div>
@@ -93,7 +109,7 @@
         return false
       }
     </script>
-    <script>
+    <!-- <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -101,7 +117,7 @@
 
       ga('create', 'UA-21332781-19', 'auto')
       ga('send', 'pageview')
-    </script>
+    </script> -->
     <link href="https://fonts.googleapis.com/css?family=Font+Name" rel="stylesheet" type="text/css">
   </body>
 </html>
@@ -131,6 +147,45 @@
         }
     };
     xhr.send();
+</script>
+
+<!-- Music API used: HTML5 Audio API -->
+<script>
+  var soundBackground = new Audio('../../public/media/MUSICADELACHIDA.mp3');
+  soundBackground.loop = true;
+  soundBackground.volume = 1;
+  // API Navigator used: Navigator API
+  // Comprobación de la compatibilidad del navegador con la reproducción automática de audio
+  if (navigator.mediaSession && navigator.mediaSession.setActionHandler) {
+      navigator.mediaSession.setActionHandler('play', function() {
+          soundBackground.play();
+      });
+
+      navigator.mediaSession.setActionHandler('pause', function() {
+          soundBackground.pause();
+      });
+  }
+
+  // Reproducción de música al cargar la página
+  window.addEventListener('load', (event) => {
+      soundBackground.play();
+      soundBackground.volume = 0.1; // Volumen = 1(100%), 0.5(50%) y 0(0%)
+  });
+
+  // Reproducción de música al recargar la página
+  window.addEventListener('pageshow', (event) =>{
+  if (event.persisted) {
+      soundBackground.play();
+      }
+  });
+
+  // Habilitación de la reproducción automática después de la interacción del usuario
+  document.addEventListener('click', function() {
+    if (soundBackground.paused) {
+        soundBackground.play();
+    } 
+});
+
 </script>
 
 </body>
