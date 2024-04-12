@@ -8,20 +8,28 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <link rel="apple-touch-icon" href="../../public/img/icon-192.png" />
   <link rel="stylesheet" href="../../public/css/style-game.css">
+  <link rel="apple-touch-icon" href="../../public/img/icon-192.png" />
+  <link rel="stylesheet" href="../../public/css/style-game.css">
   <!-- <script src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@twemoji/api@15.0.2/dist/twemoji.min.js" integrity="sha384-D6GSzpW7fMH86ilu73eB95ipkfeXcMPoOGVst/L04yqSSe+RTUY0jXcuEIZk0wrT" crossorigin="anonymous"></script> -->
+
+  <script src="../../public/js/jquery-3.2.1.min.js"></script>
 
   <script src="../../public/js/jquery-3.2.1.min.js"></script>
 
   <!-- CONTROLADORES -->
   <script src="../../controllers/routes.js"></script>
   <script src="../../controllers/scoreController.js"></script>
+
+  <script src="../../public/js/twemoji.js"></script>
+  <script src="../../public/js/game.js"></script>
 </head>
 
 <body>
   <div class="vistas">
     <main>
       <div calss="info">
+        <iframe src="../../views/modules/cambios.html" width="250px" height="60px" id="iframe-player"></iframe>
         <iframe src="../../views/modules/cambios.html" width="250px" height="60px" id="iframe-player"></iframe>
 
         <script>
@@ -38,10 +46,19 @@
     <main>
       <div calss="score">
         <iframe src="../../views/modules/score.html" width="250px" height="60px" id="iframe-score"></iframe>
+        <iframe src="../../views/modules/score.html" width="250px" height="60px" id="iframe-score"></iframe>
       </div>
     </main>
     <main>
       <div calss="records">
+        <iframe src="../../views/modules/records.html" width="250px" height="60px" id="iframe-record"></iframe>
+
+        <script>
+          iframe_record = document.getElementById('iframe-record')
+          iframe_record.addEventListener('load', function () {
+            getAllTimeRecord()
+          })
+        </script>
         <iframe src="../../views/modules/records.html" width="250px" height="60px" id="iframe-record"></iframe>
 
         <script>
@@ -119,6 +136,7 @@
 
 
   <script>
+    if (navigator.serviceWorker) navigator.serviceWorker.register('../../public/js/sw.js')
     if (navigator.serviceWorker) navigator.serviceWorker.register('../../public/js/sw.js')
   </script>
 
