@@ -39,9 +39,9 @@
       aria-label="Settings"></button>
     <div class="js-settings-popup settings-popup">
       <div class="flex">
-        <label class="btn flex-cell" aria-label="Use Twitter Emoji"><input type="radio" name="emoji" id="twemoji"
-            checked> Twemoji</label>
-        <label class="btn flex-cell" aria-label="Use Native Emoji"><input type="radio" name="emoji" id="emoji"> Native
+        <label class="btn flex-cell " aria-label="Use Twitter Emoji" style="display: none"><input type="radio" name="emoji" id="twemoji"
+            > Twemoji</label>
+        <label class="btn flex-cell" aria-label="Use Native Emoji"><input type="radio" name="emoji" id="emoji" checked> Native
           emoji</label>
       </div>
       <div class="flex" style="display: none">
@@ -138,26 +138,9 @@
     </script> -->
   <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet" type="text/css">
 
-  <script>
-    // Realizar una solicitud HTTP
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", "https://www.colr.org/json/color/ffba13", true);
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState === 4) {
-        if (xhr.status === 200) {
-          // Procesar la respuesta
-          var response = JSON.parse(xhr.responseText);
-          console.log("Información del color:", response);
-        } else {
-          console.log("Error al realizar la solicitud:", xhr.status);
-        }
-      }
-    };
-    xhr.send();
-  </script>
 
   <!-- Music API used: HTML5 Audio API -->
-  <script>
+  <!-- <script>
     var soundBackground = new Audio('../../public/media/MUSICADELACHIDA.mp3');
     soundBackground.loop = true;
     soundBackground.volume = 0.5;
@@ -192,7 +175,7 @@
       }
     });
 
-  </script>
+  </script> -->
 
 </body>
 </html>
