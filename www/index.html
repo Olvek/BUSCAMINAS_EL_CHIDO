@@ -23,11 +23,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="/BUSCAMINAS_EL_CHIDO/www/public/css/style-login.css">
+    <link rel="stylesheet" href="./public/css/style-login.css">
     <link href="https://fonts.googleapis.com/css?family=Rancho&effect=shadow-multiple" rel="stylesheet" type="text/css">
 
     <script src="./public/js/jquery-3.2.1.min.js"></script>
-    <script src="./public/js/init.js"></script>
 
       <script src="./controllers/routes.js"></script>
   <script src="./controllers/scoreController.js"></script>
@@ -68,7 +67,41 @@
             iframe_game.src = "./views/home/game.html" 
             iframe_game.style = "width: 100vw; height: 100vh; margin: 0;"
             app_render.appendChild(iframe_game)
-            loadBasicInfo()
+
+                var soundBackground = new Audio('./public/media/MUSICADELACHIDA.mp3');
+            soundBackground.loop = true;
+            soundBackground.volume = 0.5;
+            // API Navigator used: Navigator API
+            // Comprobación de la compatibilidad del navegador con la reproducción automática de audio
+            if (navigator.mediaSession && navigator.mediaSession.setActionHandler) {
+                navigator.mediaSession.setActionHandler('play', function () {
+                    soundBackground.play();
+                });
+
+                navigator.mediaSession.setActionHandler('pause', function () {
+                    soundBackground.pause();
+                });
+            }
+
+            // Reproducción de música al cargar la página
+            window.addEventListener('load', (event) => {
+                soundBackground.volume = 0.1; // Volumen = 1(100%), 0.5(50%) y 0(0%)
+            });
+
+            // Reproducción de música al recargar la página
+            window.addEventListener('pageshow', (event) => {
+                if (event.persisted) {
+                    soundBackground.play();
+                }
+            });
+
+            // Habilitación de la reproducción automática después de la interacción del usuario
+            document.addEventListener('click', function () {
+                if (soundBackground.paused) {
+                    soundBackground.play();
+                }
+            });
+
         });
     </script>
 

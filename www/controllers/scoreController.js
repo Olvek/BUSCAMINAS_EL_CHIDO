@@ -1,4 +1,26 @@
-function postScore(username, score) {
+function fancyTimeFormat(duration) {
+    // Hours, minutes and seconds
+    const hrs = ~~(duration / 3600);
+    const mins = ~~((duration % 3600) / 60);
+    const secs = ~~duration % 60;
+
+    // Output like "1:01" or "4:03:59" or "123:03:59"
+    let ret = "";
+
+    if (hrs > 0) {
+        ret += "" + hrs + ":" + (mins < 10 ? "0" : "");
+    }
+
+    ret += "" + mins + ":" + (secs < 10 ? "0" : "");
+    ret += "" + secs;
+
+    return ret;
+}
+
+function postScore(username, segundos) {
+    minutes = fancyTimeFormat(segundos)
+    score = "2000-01-01 00:" + minutes
+
     formData = {
         Score1: score,
         Name: username
@@ -27,22 +49,14 @@ function getAllTimeRecord() {
         method: 'GET',
         contentType: 'application/json',
         success: function (response) {
+            output = response.slice(-8)
             iframe_record = document.getElementById('iframe-record')
             recordDiv = iframe_record.contentWindow.document.querySelector('#record-value')
-            recordDiv.innerHTML = response
+            recordDiv.innerHTML = output
         },
         error: function (jqXHR, textStatus, errorThrown) {
             // Manejar cualquier error que ocurra durante la solicitud AJAX
             console.error('Error:', textStatus, errorThrown);
         }
     });
-}
-
-function loadBasicInfo() {
-    username = window.localStorage.getItem('username')
-    iframe_player = document.getElementById('iframe-player')
-    playerDiv = iframe_player.contentWindow.document.querySelector('#player-value')
-    playerDiv.innerHTML = username
-
-    getAllTimeRecord();
 }

@@ -6,10 +6,12 @@
   <meta http-equiv="content-type" content="text/html;charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <link rel="apple-touch-icon" href="/BUSCAMINAS_EL_CHIDO/www/public/img/icon-192.png" />
-  <link rel="stylesheet" href="/BUSCAMINAS_EL_CHIDO/www/public/css/style-game.css">
+  <link rel="apple-touch-icon" href="../../public/img/icon-192.png" />
+  <link rel="stylesheet" href="../../public/css/style-game.css">
   <!-- <script src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@twemoji/api@15.0.2/dist/twemoji.min.js" integrity="sha384-D6GSzpW7fMH86ilu73eB95ipkfeXcMPoOGVst/L04yqSSe+RTUY0jXcuEIZk0wrT" crossorigin="anonymous"></script> -->
+
+  <script src="../../public/js/jquery-3.2.1.min.js"></script>
 
   <!-- CONTROLADORES -->
   <script src="../../controllers/routes.js"></script>
@@ -20,8 +22,7 @@
   <div class="vistas">
     <main>
       <div calss="info">
-        <iframe src="/BUSCAMINAS_EL_CHIDO/www/views/modules/cambios.html" width="250px" height="60px"
-          id="iframe-player"></iframe>
+        <iframe src="../../views/modules/cambios.html" width="250px" height="60px" id="iframe-player"></iframe>
 
         <script>
           username = window.localStorage.getItem('username')
@@ -36,14 +37,19 @@
     </main>
     <main>
       <div calss="score">
-        <iframe src="/BUSCAMINAS_EL_CHIDO/www/views/modules/score.html" width="250px" height="60px"
-          id="iframe-score"></iframe>
+        <iframe src="../../views/modules/score.html" width="250px" height="60px" id="iframe-score"></iframe>
       </div>
     </main>
     <main>
       <div calss="records">
-        <iframe src="/BUSCAMINAS_EL_CHIDO/www/views/modules/records.html" width="250px" height="60px"
-          id="iframe-record"></iframe>
+        <iframe src="../../views/modules/records.html" width="250px" height="60px" id="iframe-record"></iframe>
+
+        <script>
+          iframe_record = document.getElementById('iframe-record')
+          iframe_record.addEventListener('load', function () {
+            getAllTimeRecord()
+          })
+        </script>
       </div>
     </main>
 
@@ -112,14 +118,13 @@
   <div aria-live="assertive" class="feedback"></div>
 
 
-
   <script>
-    if (navigator.serviceWorker) navigator.serviceWorker.register('/BUSCAMINAS_EL_CHIDO/www/public/js/sw.js')
+    if (navigator.serviceWorker) navigator.serviceWorker.register('../../public/js/sw.js')
   </script>
 
 
-  <script src="/BUSCAMINAS_EL_CHIDO/www/public/js/twemoji.js"></script>
-  <script src="/BUSCAMINAS_EL_CHIDO/www/public/js/game.js"></script>
+  <script src="../../public/js/twemoji.js"></script>
+  <script src="../../public/js/game.js"></script>
 
   <script>
     var emojiset = document.getElementById('emojiset').value.split(' ')
@@ -159,7 +164,8 @@
 
 
   <!-- Music API used: HTML5 Audio API -->
-  <!-- <script>
+  <script>
+
     var soundBackground = new Audio('../../public/media/MUSICADELACHIDA.mp3');
     soundBackground.loop = true;
     soundBackground.volume = 0.5;
@@ -194,7 +200,27 @@
       }
     });
 
-  </script> -->
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var wrapper = document.querySelector('.wrapper');
+      var newGameButton = document.querySelector('.js-popup-new-game');
+
+      var randomColor = 'rgb(' + Math.floor(Math.random() * 256) + ',' +
+        Math.floor(Math.random() * 256) + ',' +
+        Math.floor(Math.random() * 256) + ')';
+      wrapper.style.background = randomColor;
+      
+      newGameButton.addEventListener('click', function () {
+        var randomColor = 'rgb(' + Math.floor(Math.random() * 256) + ',' +
+          Math.floor(Math.random() * 256) + ',' +
+          Math.floor(Math.random() * 256) + ')';
+        wrapper.style.background = randomColor;
+      });
+    });
+
+  </script>
 
 </body>
 

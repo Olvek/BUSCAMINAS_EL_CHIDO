@@ -1,13 +1,13 @@
 var APP_PREFIX = 'BUSCAMINAS_EL_CHIDO'
 var VERSION = 'v0.0.2'
 var CACHE_NAME = APP_PREFIX + VERSION
-var URLS = [
-  '/BUSCAMINAS_EL_CHIDO/',
-  '/BUSCAMINAS_EL_CHIDO/www/views/home/game.html',
-  '/BUSCAMINAS_EL_CHIDO/www/public/js/game.js',
-  '/BUSCAMINAS_EL_CHIDO/www/public/js/twemoji.js'
+// var URLS = [
+//   '/BUSCAMINAS_EL_CHIDO/',
+//   '/BUSCAMINAS_EL_CHIDO/www/views/home/game.html',
+//   '/BUSCAMINAS_EL_CHIDO/www/public/js/game.js',
+//   '/BUSCAMINAS_EL_CHIDO/www/public/js/twemoji.js'
 
-]
+// ]
 
 // Respond with cached resources
 self.addEventListener('fetch', function (e) {
