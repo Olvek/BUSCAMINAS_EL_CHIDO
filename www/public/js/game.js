@@ -298,13 +298,12 @@ Game.prototype.showMessage = function () {
   document.querySelector('.wrapper').classList.add(this.result)
   document.getElementById('timer').textContent = seconds
   document.getElementById('result').innerHTML = this.usetwemoji ? twemoji.parse(emoji) : emoji
-  document.addEventListener('vibrar', function(){
-    setTimeout(() => {
-        navigator.vibrarte([1000])
-    }, );
-
-})
+  if (!winner) { // Si el jugador perdió
+    //API Web de Vibración
+    navigator.vibrate([1000]); // Vibra
+  }
 }
+
 
 // console documentation
 
