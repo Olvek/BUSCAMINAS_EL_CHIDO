@@ -20,29 +20,18 @@ function postScore(username, score) {
     });
 }
 
-function getAllTimeRecord() {
+function postScore(formData) {
     // Enviar la solicitud AJAX
     $.ajax({
         url: getAllTimeRecord_route,
         method: 'GET',
         contentType: 'application/json',
         success: function (response) {
-            iframe_record = document.getElementById('iframe-record')
-            recordDiv = iframe_record.contentWindow.document.querySelector('#record-value')
-            recordDiv.innerHTML = response
+            alert(response)
         },
         error: function (jqXHR, textStatus, errorThrown) {
             // Manejar cualquier error que ocurra durante la solicitud AJAX
             console.error('Error:', textStatus, errorThrown);
         }
     });
-}
-
-function loadBasicInfo() {
-    username = window.localStorage.getItem('username')
-    iframe_player = document.getElementById('iframe-player')
-    playerDiv = iframe_player.contentWindow.document.querySelector('#player-value')
-    playerDiv.innerHTML = username
-
-    getAllTimeRecord();
 }

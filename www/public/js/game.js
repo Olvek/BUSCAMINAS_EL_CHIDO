@@ -306,18 +306,13 @@ Game.prototype.showMessage = function () {
     
   })
   
-  if (winner) { //Si el jugador ganó
-    //Mostrar score
+  if (!winner) { // Si el jugador perdió
+    //API Web de Vibración
+    navigator.vibrate([1000]); // Vibra
+    //show score
     iframe_score = document.getElementById('iframe-score')
     scoreDiv = iframe_score.contentWindow.document.querySelector('#score-value')
     scoreDiv.innerHTML = seconds
-
-    let user = window.localStorage.getItem('username')
-    postScore(user, seconds)
-    getAllTimeRecord();
-  } else { // Si el jugador perdió
-    //API Web de Vibración
-    navigator.vibrate([1000]); // Vibra
   }
 
 }
