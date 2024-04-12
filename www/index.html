@@ -17,47 +17,68 @@
     specific language governing permissions and limitations
     under the License.
 -->
-<html>
-    <head>
-        <meta charset="utf-8">
-        <!--
-        Customize this policy to fit your own app's needs. For more guidance, please refer to the docs:
-            https://cordova.apache.org/docs/en/latest/
-        Some notes:
-            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-                * Enable inline JS: add 'unsafe-inline' to default-src
-                <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
-        -->
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
-        <meta name="color-scheme" content="light dark">
-        <link rel="stylesheet" href="/BUSCAMINAS_EL_CHIDO/www/public/css/style-game.css">
-        <link rel="stylesheet" href="/BUSCAMINAS_EL_CHIDO/www/public/css/style-login.css">
-        <link rel="stylesheet" href="/BUSCAMINAS_EL_CHIDO/www/public/css/bootstrap/dist/css/bootstrap.min.css">
-        <title>Leaflet map</title>
-        <script src="/BUSCAMINAS_EL_CHIDO/www/public/css/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script src="/BUSCAMINAS_EL_CHIDO/www/public/js/game.js"></script>
-        <script src="/BUSCAMINAS_EL_CHIDO/www/public/js/fondo_tablero.js"></script>
-        <script src="public/js/jquery-3.2.1.min.js"></script>
-    </head>
-    <body class="bg-body-secondary">
-        <!--Navbar-->
-        <nav class="w-100 nav-init position-sticky top-0 z-3">
-
-        </nav>
-        <link rel="stylesheet" href="/BUSCAMINAS_EL_CHIDO/www/public/css/style-game.css">
-        <!--Render content-->
-        <main> 
-            <div class="app"></div>
-            <iframe src="views/user/login.html" width="1000px"></iframe>
-        </main>
-
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/BUSCAMINAS_EL_CHIDO/www/public/css/style-login.css">
+    <link href="https://fonts.googleapis.com/css?family=Rancho&effect=shadow-multiple" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="title">
+        <h1 efect="shadow-multiple">Buscaminas</h1>
+    </div>
+    <div class="container">
+        <div class="formulario">
+            <form method="post" onsubmit="fetchData(); return false;">
+                <h2>Registra tu nombre</h2>
+                <div class="username">
+                    <input id="usernameInput" type="text" placeholder="Nombre de usuario" required>
+                </div>
+                <button id="botonIniciar" class="botonIniciar" >Iniciar Juego</button>
+            </form>
         </div>
-        <script src="/BUSCAMINAS_EL_CHIDO/www/public/js/index.js"></script>
-        
-            
-            
-    </body>
+
+        <!-- Aquí vamos a mostrar los datos obtenidos de la API -->
+        <div id="dni-info"></div>
+    </div>
+
+    <script>
+        // URL de la API
+        var apiUrl = "https://api.generadordni.es/v2/person/";
+
+        // Función para realizar la solicitud a la API
+        function fetchData() {
+            var username = document.getElementById('usernameInput').value;
+            var finalUrl = apiUrl + username;
+
+            fetch(finalUrl)
+                .then(response => response.json())
+                .then(data => {
+                    // Manipular los datos obtenidos de la API
+                    displayData(data);
+                })
+                .catch(error => {
+                    console.error('Error al obtener datos:', error);
+                });
+        }
+
+        // Función para mostrar los datos en la página HTML
+        function displayData(data) {
+            var dniInfoElement = document.getElementById('dni-info');
+            dniInfoElement.innerHTML = `
+                <h2>DNI generado:</h2>
+                <p><strong>Nombre:</strong> ${data.nombre}</p>
+                <p><strong>Apellidos:</strong> ${data.apellidos}</p>
+                <p><strong>DNI:</strong> ${data.dni}</p>
+            `;
+        }
+    </script>
+</body>
 </html>
+
+
+
+
+
