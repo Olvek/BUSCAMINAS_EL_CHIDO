@@ -19,8 +19,8 @@
   <script src="../../controllers/routes.js"></script>
   <script src="../../controllers/scoreController.js"></script>
 
-  <script src="../../public/js/twemoji.js"></script>
-  <script src="../../public/js/game.js"></script>
+  <!-- <script src="../../public/js/twemoji.js"></script>
+  <script src="../../public/js/game.js"></script> -->
 </head>
 
 <body>
@@ -42,7 +42,6 @@
     </main>
     <main>
       <div calss="score">
-        <iframe src="../../views/modules/score.html" width="250px" height="60px" id="iframe-score"></iframe>
         <iframe src="../../views/modules/score.html" width="250px" height="60px" id="iframe-score"></iframe>
       </div>
     </main>
@@ -125,7 +124,6 @@
   <div aria-live="assertive" class="feedback"></div>
 
   <script>
-    if (navigator.serviceWorker) navigator.serviceWorker.register('../../public/js/sw.js')
     if (navigator.serviceWorker) navigator.serviceWorker.register('../../public/js/sw.js')
   </script>
 
