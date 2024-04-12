@@ -11,19 +11,21 @@
   <!-- <script src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@twemoji/api@15.0.2/dist/twemoji.min.js" integrity="sha384-D6GSzpW7fMH86ilu73eB95ipkfeXcMPoOGVst/L04yqSSe+RTUY0jXcuEIZk0wrT" crossorigin="anonymous"></script> -->
 
-<script src="../../public/js/jquery-3.2.1.min.js"></script>
+  <script src="../../public/js/jquery-3.2.1.min.js"></script>
 
   <!-- CONTROLADORES -->
   <script src="../../controllers/routes.js"></script>
   <script src="../../controllers/scoreController.js"></script>
+
+  <script src="../../public/js/twemoji.js"></script>
+  <script src="../../public/js/game.js"></script>
 </head>
 
 <body>
   <div class="vistas">
     <main>
       <div calss="info">
-        <iframe src="../../views/modules/cambios.html" width="250px" height="60px"
-          id="iframe-player"></iframe>
+        <iframe src="../../views/modules/cambios.html" width="250px" height="60px" id="iframe-player"></iframe>
 
         <script>
           username = window.localStorage.getItem('username')
@@ -38,21 +40,19 @@
     </main>
     <main>
       <div calss="score">
-        <iframe src="../../views/modules/score.html" width="250px" height="60px"
-          id="iframe-score"></iframe>
+        <iframe src="../../views/modules/score.html" width="250px" height="60px" id="iframe-score"></iframe>
       </div>
     </main>
     <main>
       <div calss="records">
-        <iframe src="../../views/modules/records.html" width="250px" height="60px"
-          id="iframe-record"></iframe>
+        <iframe src="../../views/modules/records.html" width="250px" height="60px" id="iframe-record"></iframe>
 
-          <script>
-            iframe_record = document.getElementById('iframe-record')
-            iframe_record.addEventListener('load', function () {
-              getAllTimeRecord()
-            })
-          </script>
+        <script>
+          iframe_record = document.getElementById('iframe-record')
+          iframe_record.addEventListener('load', function () {
+            getAllTimeRecord()
+          })
+        </script>
       </div>
     </main>
 
@@ -127,8 +127,7 @@
   </script>
 
 
-  <script src="../../public/js/twemoji.js"></script>
-  <script src="../../public/js/game.js"></script>
+
 
   <script>
     var emojiset = document.getElementById('emojiset').value.split(' ')
@@ -168,7 +167,7 @@
 
 
   <!-- Music API used: HTML5 Audio API -->
-  <!-- <script>
+  <script>
     var soundBackground = new Audio('../../public/media/MUSICADELACHIDA.mp3');
     soundBackground.loop = true;
     soundBackground.volume = 0.5;
@@ -203,7 +202,7 @@
       }
     });
 
-  </script> -->
+  </script>
 
 </body>
 
