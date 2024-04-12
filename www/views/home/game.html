@@ -11,24 +11,39 @@
   <!-- <script src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@twemoji/api@15.0.2/dist/twemoji.min.js" integrity="sha384-D6GSzpW7fMH86ilu73eB95ipkfeXcMPoOGVst/L04yqSSe+RTUY0jXcuEIZk0wrT" crossorigin="anonymous"></script> -->
 
+  <!-- CONTROLADORES -->
+  <script src="../../controllers/routes.js"></script>
+  <script src="../../controllers/scoreController.js"></script>
 </head>
 
 <body>
   <div class="vistas">
     <main>
       <div calss="info">
-        <iframe src="/BUSCAMINAS_EL_CHIDO/www/views/modules/cambios.html" width="250px" height="60px" id="iframe-player"></iframe>
+        <iframe src="/BUSCAMINAS_EL_CHIDO/www/views/modules/cambios.html" width="250px" height="60px"
+          id="iframe-player"></iframe>
+
+        <script>
+          username = window.localStorage.getItem('username')
+          iframe_player = document.getElementById('iframe-player')
+          iframe_player.addEventListener('load', function () {
+            playerDiv = iframe_player.contentWindow.document.querySelector('#player-value')
+            playerDiv.innerHTML = username
+          })
+        </script>
       </div>
 
     </main>
     <main>
       <div calss="score">
-        <iframe src="/BUSCAMINAS_EL_CHIDO/www/views/modules/score.html" width="250px" height="60px" id="iframe-score"></iframe>
+        <iframe src="/BUSCAMINAS_EL_CHIDO/www/views/modules/score.html" width="250px" height="60px"
+          id="iframe-score"></iframe>
       </div>
     </main>
     <main>
       <div calss="records">
-        <iframe src="/BUSCAMINAS_EL_CHIDO/www/views/modules/records.html" width="250px" height="60px" id="iframe-record"></iframe>
+        <iframe src="/BUSCAMINAS_EL_CHIDO/www/views/modules/records.html" width="250px" height="60px"
+          id="iframe-record"></iframe>
       </div>
     </main>
 
@@ -39,9 +54,10 @@
       aria-label="Settings"></button>
     <div class="js-settings-popup settings-popup">
       <div class="flex">
-        <label class="btn flex-cell " aria-label="Use Twitter Emoji" style="display: none"><input type="radio" name="emoji" id="twemoji"
-            > Twemoji</label>
-        <label class="btn flex-cell" aria-label="Use Native Emoji"><input type="radio" name="emoji" id="emoji" checked> Native
+        <label class="btn flex-cell " aria-label="Use Twitter Emoji" style="display: none"><input type="radio"
+            name="emoji" id="twemoji"> Twemoji</label>
+        <label class="btn flex-cell" aria-label="Use Native Emoji"><input type="radio" name="emoji" id="emoji" checked>
+          Native
           emoji</label>
       </div>
       <div class="flex" style="display: none">
@@ -95,9 +111,12 @@
   </div>
   <div aria-live="assertive" class="feedback"></div>
 
+
+
   <script>
     if (navigator.serviceWorker) navigator.serviceWorker.register('/BUSCAMINAS_EL_CHIDO/www/public/js/sw.js')
   </script>
+
 
   <script src="/BUSCAMINAS_EL_CHIDO/www/public/js/twemoji.js"></script>
   <script src="/BUSCAMINAS_EL_CHIDO/www/public/js/game.js"></script>
@@ -178,4 +197,5 @@
   </script> -->
 
 </body>
+
 </html>
