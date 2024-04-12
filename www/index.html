@@ -18,6 +18,7 @@
     under the License.
 -->
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,24 +26,43 @@
     <link rel="stylesheet" href="/BUSCAMINAS_EL_CHIDO/www/public/css/style-login.css">
     <link href="https://fonts.googleapis.com/css?family=Rancho&effect=shadow-multiple" rel="stylesheet" type="text/css">
 </head>
+
 <body>
     <div class="title">
         <h1 efect="shadow-multiple">Buscaminas</h1>
     </div>
-    <div class="container">
-        <div class="formulario">
-            <form method="post" onsubmit="fetchData(); return false;">
-                <h2>Registra tu nombre</h2>
-                <div class="username">
-                    <input id="usernameInput" type="text" placeholder="Nombre de usuario" required>
-                </div>
-                <button id="botonIniciar" class="botonIniciar" >Iniciar Juego</button>
-            </form>
+    <div id="app" style="">
+        <div class="container">
+            <div class="formulario">
+                <form method="post" onsubmit="fetchData(); return false;">
+                    <h2>Registra tu nombre</h2>
+                    <div class="username">
+                        <input id="usernameInput" type="text" placeholder="Nombre de usuario" required>
+                    </div>
+                    <button id="botonIniciar" class="botonIniciar">Iniciar Juego</button>
+                </form>
+            </div>
+            <!-- Aquí vamos a mostrar los datos obtenidos de la API -->
+            <div id="dni-info"></div>
         </div>
-
-        <!-- Aquí vamos a mostrar los datos obtenidos de la API -->
-        <div id="dni-info"></div>
     </div>
+
+    <script>
+        const app_render = document.getElementById('app');
+
+        let btn_iniciar = document.getElementById('botonIniciar')
+
+        //Acciones al presionar el boton de iniciar sesion
+        btn_iniciar.addEventListener('click', function () {
+            username = document.getElementById('usernameInput').value
+            localStorage.setItem("username", username);
+            app_render.innerHTML = "";
+            let iframe_game = document.createElement('iframe')
+            iframe_game.src = "./views/home/game.html"
+            iframe_game.style = "width: 100vw; height: 100vh; margin: 0; position: fixed; top: 0; left: 0;"
+            app_render.appendChild(iframe_game)
+        });
+    </script>
 
     <script>
         // URL de la API
@@ -76,9 +96,5 @@
         }
     </script>
 </body>
+
 </html>
-
-
-
-
-

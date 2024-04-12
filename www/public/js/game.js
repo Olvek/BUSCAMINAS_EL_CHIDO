@@ -309,12 +309,31 @@ Game.prototype.showMessage = function () {
   if (!winner) { // Si el jugador perdió
     //API Web de Vibración
     navigator.vibrate([1000]); // Vibra
-    //show score
+
+    fetch('https://www.thecolorapi.com/random?format=json')
+      .then(response => response.json())
+      .then(data => {
+        // Muestra los datos del color en el contenedor 'colorInfo'
+        const colorInfoDiv = document.getElementById('colorInfo');
+        colorInfoDiv.innerHTML = `
+          <h2>Name: ${data.name.value}</h2>
+          <p>RGB: ${data.rgb.value}</p>
+          <p>HSL: ${data.hsl.value}</p>
+        `;
+      })
+      .catch(error => {
+        console.error('Error fetching color data:', error);
+      });
+  } else {
+    //Mostrar score
     iframe_score = document.getElementById('iframe-score')
     scoreDiv = iframe_score.contentWindow.document.querySelector('#score-value')
     scoreDiv.innerHTML = seconds
-  }
 
+    let user = window.localStorage.getItem('username')
+    postScore(user, seconds)
+    getAllTimeRecord();
+  }
 }
 
 
@@ -328,6 +347,11 @@ console.log(' Or: `game = new Game(16, 16, 30, ["✅", "💣", "🚧", "◻️"]
 document.addEventListener("DOMContentLoaded", function () {
   var wrapper = document.querySelector('.wrapper');
   var newGameButton = document.querySelector('.js-popup-new-game');
+
+  var randomColor = 'rgb(' + Math.floor(Math.random() * 256) + ',' +
+    Math.floor(Math.random() * 256) + ',' +
+    Math.floor(Math.random() * 256) + ')';
+  wrapper.style.background = randomColor;
 
   newGameButton.addEventListener('click', function () {
     var randomColor = 'rgb(' + Math.floor(Math.random() * 256) + ',' +
