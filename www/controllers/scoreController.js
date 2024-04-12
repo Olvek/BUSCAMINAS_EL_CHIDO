@@ -52,7 +52,7 @@ function getAllTimeRecord() {
             output = response.slice(-8)
             iframe_record = document.getElementById('iframe-record')
             recordDiv = iframe_record.contentWindow.document.querySelector('#record-value')
-            recordDiv.innerHTML = output
+            recordDiv.innerHTML = output + 
         },
         error: function (jqXHR, textStatus, errorThrown) {
             // Manejar cualquier error que ocurra durante la solicitud AJAX

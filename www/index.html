@@ -61,6 +61,8 @@
         //Acciones al presionar el boton de iniciar sesion
         btn_iniciar.addEventListener('click', function () {
             username = document.getElementById('usernameInput').value
+            if(username == ""){return}
+
             localStorage.setItem("username", username);
             app_render.innerHTML = "";
             let iframe_game = document.createElement('iframe')
