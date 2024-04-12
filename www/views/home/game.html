@@ -11,6 +11,8 @@
   <!-- <script src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@twemoji/api@15.0.2/dist/twemoji.min.js" integrity="sha384-D6GSzpW7fMH86ilu73eB95ipkfeXcMPoOGVst/L04yqSSe+RTUY0jXcuEIZk0wrT" crossorigin="anonymous"></script> -->
 
+<script src="../../public/js/jquery-3.2.1.min.js"></script>
+
   <!-- CONTROLADORES -->
   <script src="../../controllers/routes.js"></script>
   <script src="../../controllers/scoreController.js"></script>
@@ -44,6 +46,13 @@
       <div calss="records">
         <iframe src="/BUSCAMINAS_EL_CHIDO/www/views/modules/records.html" width="250px" height="60px"
           id="iframe-record"></iframe>
+
+          <script>
+            iframe_record = document.getElementById('iframe-record')
+            iframe_record.addEventListener('load', function () {
+              getAllTimeRecord()
+            })
+          </script>
       </div>
     </main>
 
