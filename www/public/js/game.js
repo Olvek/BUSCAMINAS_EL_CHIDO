@@ -28,10 +28,10 @@ Game.prototype.init = function () {
   this.map.innerHTML = ''
   var grid_data = this.bomb_array()
 
-  function getIndex (x, y) {
+  function getIndex(x, y) {
     if (x > that.cols || x <= 0) return -1
     if (y > that.cols || y <= 0) return -1
-    return that.cols * (y - 1 ) + x - 1
+    return that.cols * (y - 1) + x - 1
   }
 
   var row = document.createElement('div')
@@ -43,7 +43,7 @@ Game.prototype.init = function () {
     var x = Math.floor((i + 1) % that.cols) || that.cols
     var y = Math.ceil((i + 1) / that.cols)
     var neighbors_cords = [[x, y - 1], [x, y + 1], [x - 1, y - 1], [x - 1, y], [x - 1, y + 1], [x + 1, y - 1], [x + 1, y], [x + 1, y + 1]]
-    if(!isBomb) {
+    if (!isBomb) {
       var neighbors = neighbors_cords.map(function (xy) { return grid_data[getIndex(xy[0], xy[1])] })
       mine.mine_count = neighbors.filter(function (neighbor_bomb) { return neighbor_bomb }).length
     }
@@ -52,7 +52,7 @@ Game.prototype.init = function () {
 
     cell.appendChild(mine)
     row.appendChild(cell)
-    if (x === that.cols)  {
+    if (x === that.cols) {
       that.map.appendChild(row)
       row = document.createElement('div')
       row.setAttribute('role', 'row')
@@ -109,7 +109,7 @@ Game.prototype.bindEvents = function () {
       evt.preventDefault()
       if (!target.isMasked) { return }
       if (target.isFlagged) {
-        target.setAttribute('aria-label','Field')
+        target.setAttribute('aria-label', 'Field')
         that.updateFeedback('Unflagged as potential bomb')
         emoji = that.emojiset[3].cloneNode()
         target.isFlagged = false
@@ -213,7 +213,7 @@ Game.prototype.mine = function (bomb) {
 
 Game.prototype.revealNeighbors = function (mine) {
   var neighbors = document.querySelectorAll(mine.neighbors)
-  for(var i = 0; i < neighbors.length; i++) {
+  for (var i = 0; i < neighbors.length; i++) {
     if (neighbors[i].isMasked && !neighbors[i].isFlagged) {
       neighbors[i].reveal()
 
@@ -226,9 +226,9 @@ Game.prototype.revealNeighbors = function (mine) {
 
 Game.prototype.prepareEmoji = function () {
   var that = this
-  function makeEmojiElement (emoji) {
+  function makeEmojiElement(emoji) {
     var ele
-    if(that.usetwemoji) {
+    if (that.usetwemoji) {
       if (emoji.src) {
         ele = emoji
       } else {
@@ -298,12 +298,17 @@ Game.prototype.showMessage = function () {
   document.querySelector('.wrapper').classList.add(this.result)
   document.getElementById('timer').textContent = seconds
   document.getElementById('result').innerHTML = this.usetwemoji ? twemoji.parse(emoji) : emoji
-  document.addEventListener('vibrar', function(){
+  document.addEventListener('vibrar', function () {
     setTimeout(() => {
-        navigator.vibrarte([1000])
-    }, );
+      navigator.vibrarte([1000])
+    },);
+    
+  })
 
-})
+  //show score
+  iframe_score = document.getElementById('iframe-score')
+  scoreDiv = iframe_score.contentWindow.document.querySelector('#score-value')
+  scoreDiv.innerHTML = seconds
 }
 
 // console documentation
@@ -313,15 +318,15 @@ console.log(' Eg: `game = new Game(10, 10, 10, ["🌱", "💥", "🚩", "◻️"
 console.log(' Or: `game = new Game(16, 16, 30, ["✅", "💣", "🚧", "◻️"], true)`')
 
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   var wrapper = document.querySelector('.wrapper');
   var newGameButton = document.querySelector('.js-popup-new-game');
 
-  newGameButton.addEventListener('click', function() {
-      var randomColor = 'rgb(' + Math.floor(Math.random() * 256) + ',' +
+  newGameButton.addEventListener('click', function () {
+    var randomColor = 'rgb(' + Math.floor(Math.random() * 256) + ',' +
       Math.floor(Math.random() * 256) + ',' +
       Math.floor(Math.random() * 256) + ')';
-      wrapper.style.background = randomColor;
+    wrapper.style.background = randomColor;
   });
 });
 
